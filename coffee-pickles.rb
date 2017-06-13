@@ -21,8 +21,8 @@ get '/' do
   coffees = Coffee.where(:user_id => @user.id)
   coffees.each do |coffee|
     date = coffee.purchased
-    @coffeedays[date.strftime('%A')] += 1
-    @coffeeline[date] += 1
+    @coffeedays[date.getlocal.strftime('%A')] += 1
+    @coffeeline[date.getlocal] += 1
   end
 
   @all_time = coffees.count
