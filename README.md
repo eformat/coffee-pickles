@@ -24,3 +24,12 @@ $ bundle exec shotgun -o 0.0.0.0 -p 5000 config.ru
 
 ```
 
+You can also access the irb console for the application:
+
+```
+$ bundle exec irb -r ./coffee-pickles.rb
+irb(main):001:0> user = User.where(:id => 2)
+D, [2017-06-14T07:00:21.228401 #32347] DEBUG -- :   User Load (0.1ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 2], ["LIMIT", 11]]
+=> #<ActiveRecord::Relation [#<User id: 2, name: "user1", balance: 11>]>
+
+```
