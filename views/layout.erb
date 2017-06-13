@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="ut8">
+  <title>Coffee Pickles</title>
+  <link type="text/css" href="/main.css" rel="stylesheet">
+  <link type="text/css" href="/normalize.css" rel="stylesheet">
+  <script src="chartkick.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <header>
+    <hgroup>
+    <h1><a href="/"><span class="blue">Coffee Pickles</span></a></h1>
+    </hgroup>
+  </header>
+
+  <div id="main">
+    <% if flash[:error] %>
+        <span class="flash error"><%= flash[:error]%></span>
+    <% end %>
+    <%= yield %>
+  </div>
+
+  <footer>
+    <p><small>Available on <a href="https://github.com/jockey10/coffee-pickles/">Github</small></p>
+  </footer>
+  </body>
+</html>

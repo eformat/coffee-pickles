@@ -1,0 +1,14 @@
+<h1>User name: <%=  @user.name %></h1>
+<p>Current balance: $<%= @user.balance  %></p>
+<p>All-time coffees: <%= @all_time %></p>
+<p>Recent payments: <%=  %></p>
+
+<section id="add">
+  <form action="/coffee" method="post">
+    <input type="submit" id="submit" value="Coffee!">
+</form>
+</section>
+
+<%= bar_chart @coffeedays %>
+
+<%= line_chart @coffeeline %>
