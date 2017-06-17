@@ -25,7 +25,7 @@ get '/' do
     @coffeeline = Hash.new(0)
     @payments = @user.payments.last(3).reverse
 
-    coffees = Coffee.where(:user_id => @user.id)
+    coffees = @user.coffees
     coffees.each do |coffee|
       date = coffee.purchased
       @coffeedays[date.getlocal.strftime('%A')] += 1
@@ -54,14 +54,14 @@ end
 post '/payment' do
   # get the amount from the text-box
   amount = Integer(params[:payment]) rescue false
-  if amount
+  if (amount and amount > 0 )
     date = Time.now.getlocal('+10:00')
     user = find_user("user1")
     user.make_payment(date,amount)
     flash[:info] = "Payment successful"
     redirect "/"
   else
-    flash[:error] = "Enter an integer amount for payment"
+    flash[:error] = "Enter a positive integer amount for payment"
     redirect "/"
   end
 end
