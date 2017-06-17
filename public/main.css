@@ -133,8 +133,8 @@ header {
 }
 
 .flash.notice, .flash.info {
-  border: thin solid #ff0;
-  background: #ffe;
+  color: #0A6A3E;
+  background: #C8eFDD;
 }
 
 .flash.warning {
@@ -152,10 +152,10 @@ header {
 .dark-gray {
   color: #292f33
 }
-                                                
-#add {
-  margin: 5px 0 20px;
-  height: 30px;
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
 }
 
 #main {
@@ -163,51 +163,43 @@ header {
   margin: 0 auto 20px auto;
 }
 
-#main h1 {
-  margin: 0 0 5px;
+#user h1 {
   font-size: 16px;
 }
 
-#infobox {
-  width: 580px;
-  background: #ffe4c4;
-  margin: 0 auto 20px auto;
+#user {
+  flex: 1 100%;
 }
-                                                     
-#add input[type=text] {
-  height: 30px;
-  width: 640px;
-  padding: 10px;
-  border: 1px solid #ddd;
+
+#controls {
+  flex: 2 100%;
+  text-align: right;
+  margin: 0 50px 0 0;
 }
-                                                                    
-#add input {
+
+#coffee-submit {
   height: 50px;
-  width: 740px;
-  float: left;
-  display: block;
+  width: 180px;
   border: 1px solid #ddd;
   background: white;
 }
-                                                                                       
-#edit textarea {
-  height: 30px;
-  width: 480px;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-                                                                                                         
-#edit input[type=submit] {
-  height: 30px;
-  width: 480px;
-  margin: 0 0 0;
+
+#payment-text {
+  height: 50px;
+  width: 113px;
+  margin: 5px auto;
   border: 1px solid #ddd;
   background: white;
-}                                                                                                                           
-#edit input[type=checkbox] {
-  height: 50px;
-  width: 20px;
 }
+
+#payment-submit {
+  height: 50px;
+  width: 60px;
+  margin: 5px auto;
+  border: 1px solid #ddd;
+  background: white;
+}
+
 
 .meta {
   font-size: 0.8em;

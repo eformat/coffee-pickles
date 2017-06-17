@@ -1,13 +1,23 @@
-<h1>User name: <%=  @user.name %></h1>
-<p>Current balance: $<%= @user.balance  %></p>
-<p>All-time coffees: <%= @all_time %></p>
-<p>Recent payments: <%=  %></p>
-
-<section id="add">
+<div class="flex-container">
+  <div id="user">
+    <h1>User name: <%=  @user.name %></h1>
+    <p>Current balance: $<%= @user.balance  %></p>
+    <p>All-time coffees: <%= @all_time %></p>
+    <p>Recent payments: </p>
+    <% @payments.each do |payment| %>
+      <p>* <%= payment.date.getlocal %> : $<%= payment.amount %>
+    <% end %>
+</div>
+<div id="controls">
   <form action="/coffee" method="post">
-    <input type="submit" id="submit" value="Coffee!">
-</form>
-</section>
+    <input type="submit" id="coffee-submit" value="Coffee!">
+  </form>
+  <form action="/payment" method="post">
+    <input type="text" name="payment" id="payment-text">
+    <input type="submit" id="payment-submit" value="Pay">
+  </form>
+</div>
+</div>
 
 <%= bar_chart @coffeedays %>
 
