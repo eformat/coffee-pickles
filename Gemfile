@@ -10,9 +10,9 @@ gem 'rake'
 group :test, :development do
   gem 'rspec'
   gem 'rack-test'
-  gem 'dotenv'
-  gem 'sqlite3'
   gem 'shotgun'
+  gem 'sqlite3'
+  gem 'thin'
 end
 
 group :production do
