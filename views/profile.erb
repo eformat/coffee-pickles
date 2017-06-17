@@ -7,16 +7,16 @@
     <% @payments.each do |payment| %>
       <p>* <%= payment.date.getlocal %> : $<%= payment.amount %>
     <% end %>
-</div>
-<div id="controls">
-  <form action="/coffee" method="post">
-    <input type="submit" id="coffee-submit" value="Coffee!">
-  </form>
-  <form action="/payment" method="post">
-    <input type="text" name="payment" id="payment-text">
-    <input type="submit" id="payment-submit" value="Pay">
-  </form>
-</div>
+  </div>
+  <div id="controls">
+    <form action="/coffee" method="post">
+      <input type="submit" id="coffee-submit" value="Coffee!">
+    </form>
+    <form action="/payment" method="post">
+      <input type="text" name="payment" id="payment-text">
+      <input type="submit" id="payment-submit" value="Pay">
+    </form>
+  </div>
 </div>
 
 <%= bar_chart @coffeedays %>
